@@ -8,7 +8,7 @@
 
 .App {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .TitleContainer {
@@ -16,5 +16,5 @@
 }
 
 .Content {
-    width: 45%;
+    width: 60%;
 }
