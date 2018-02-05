@@ -1,1 +1,20 @@
+.header {
+    display: flex;
+    justify-content: center;
+    border: solid black 2px;
+    padding: 30px;
+    margin-top: 0;
+}
 
+.App {
+    display: flex;
+    flex-direction: column;
+}
+
+.TitleContainer {
+    width: 35%;
+}
+
+.Content {
+    width: 45%;
+}
