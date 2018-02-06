@@ -53,10 +53,10 @@ class App extends Component {
     })
   }
 
-  _handleTyping = (p) => {
+  _handleTyping = (value) => {
     this.setState((oldState) => {
       let newState = { ...oldState };
-      newState.documents[oldState.selectedIndex].content = p;
+      newState.documents[oldState.selectedIndex].content = value;
       return newState;
     })
   }
