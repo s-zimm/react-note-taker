@@ -22,19 +22,25 @@ class App extends Component {
           title: 'Doc 3',
           content: 'Hey!'
         }
-      ]
+      ],
+      selectedIndex: 0
     }
   }
 
-  // _handleClick(title) {
+  _setSelectedIndex = (i)  => {
+    console.log(i)
+    this.setState({
+      selectedIndex: i
+    })
+  }
 
-  // }
-
-  _handleTyping = (newText, docTitle) => {
-    this.state.documents = {
-      title: docTitle,
-      content: newText
-    }
+  _handleTyping = (p) => {
+    console.log(p)
+    this.setState((oldState) => {
+      let newState = { ...oldState };
+      newState.documents[oldState.selectedIndex].content = p;
+      return newState;
+    })
   }
 
   render() {
@@ -44,11 +50,12 @@ class App extends Component {
         <div className="App">
           <TitleContainer 
             data={this.state}
-            // handleClick={_handleClick(title)}
+            handleClick={this._setSelectedIndex}
           />
           <Content 
-            data={this.state}
+            data={this.state.documents[this.state.selectedIndex]}
             handleChange={this._handleTyping}
+            value={'Hi'}
           />
         </div>
       </div>

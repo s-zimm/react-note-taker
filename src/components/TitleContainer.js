@@ -4,13 +4,15 @@ import Title from './Title';
 
 const TitleContainer = props => {
 
-    let titleArray = props.data.documents.filter(doc => doc.title)
-                                         .map(doc => {
+    let titleArray = props.data.documents
+                                         .map((doc, i) => {
                                              return (
                                                 <div>
                                                     <Title
                                                         titleName={doc.title}
-                                                        onClick={props.handleClick}
+                                                        onClick={() => {
+                                                            props.handleClick(i)
+                                                        }}
                                                     />
                                                 </div>
                                              );
