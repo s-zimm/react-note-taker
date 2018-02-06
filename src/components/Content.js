@@ -14,6 +14,7 @@ class Content extends React.Component {
     return (
         <div className="Content">
         <Title 
+            container='Content'
             onClick={() => this.props.handleTitleClick()}
             titleName={this.props.data.title}
         />

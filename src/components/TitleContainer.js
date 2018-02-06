@@ -9,6 +9,7 @@ const TitleContainer = props => {
                                              return (
                                                 <div>
                                                     <Title
+                                                        container='TitleContainer'
                                                         titleName={doc.title}
                                                         onClick={() => {
                                                             props.handleClick(i)
