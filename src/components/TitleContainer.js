@@ -9,6 +9,7 @@ const TitleContainer = props => {
                                              return (
                                                 <div>
                                                     <Title
+                                                        key={i}
                                                         container='TitleContainer'
                                                         titleName={doc.title}
                                                         onClick={() => {
@@ -21,8 +22,8 @@ const TitleContainer = props => {
 
     return (
         <div className="TitleContainer">
-            {titleArray}
             <button onClick={props.newDocWillLoad}>New Doc</button>
+            {titleArray}
         </div>
     )
 }
