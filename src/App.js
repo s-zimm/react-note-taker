@@ -28,7 +28,6 @@ class App extends Component {
   }
 
   _setSelectedIndex = (i)  => {
-    console.log(i)
     this.setState({
       selectedIndex: i
     })
@@ -43,6 +42,10 @@ class App extends Component {
     })
   }
 
+  _handleTitleClick = () => {
+    console.log('hi!!')
+  }
+
   render() {
     return (
       <div>
@@ -55,7 +58,7 @@ class App extends Component {
           <Content 
             data={this.state.documents[this.state.selectedIndex]}
             handleChange={this._handleTyping}
-            value={'Hi'}
+            handleTitleClick={this._handleTitleClick}
           />
         </div>
       </div>

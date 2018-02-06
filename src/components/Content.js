@@ -13,6 +13,10 @@ class Content extends React.Component {
     render() {
     return (
         <div className="Content">
+        <Title 
+            onClick={() => this.props.handleTitleClick()}
+            titleName={this.props.data.title}
+        />
             <textarea className="content-input" type="text" value={this.props.data.content} onChange={this._handleChange.bind(this)} />
         </div>
     )
