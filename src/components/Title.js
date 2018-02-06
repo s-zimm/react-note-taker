@@ -25,6 +25,7 @@ class Title extends Component {
                 return (
                     <div>
                         <input onChange={this._handleTitleChange} type="text" defaultValue={this.props.titleName} />
+                        <button onClick={() => this.setState({ isEditing: false })}>Save</button>
                     </div>
                 )
             } else {
