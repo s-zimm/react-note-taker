@@ -9,10 +9,6 @@ class Title extends Component {
         }
     }
 
-    _handleTitleChange = (event) => {
-        this.props.handleTitleChange(event);
-    }
-
     render() {
         if (this.props.container === 'TitleContainer') {
             return (
@@ -24,7 +20,7 @@ class Title extends Component {
             if (this.state.isEditing === true) {
                 return (
                     <div>
-                        <input onChange={this._handleTitleChange} type="text" defaultValue={this.props.titleName} />
+                        <input onChange={event => this.props.handleTitleChange(event)} type="text" defaultValue={this.props.titleName} />
                         <button onClick={() => this.setState({ isEditing: false })}>Save</button>
                     </div>
                 )

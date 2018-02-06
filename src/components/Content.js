@@ -9,15 +9,11 @@ class Content extends React.Component {
 
     }
 
-    _handleTitleChange = (event) => {
-        this.props.handleTitleChange(event.target.value)
-    }
-
     render() {
     return (
         <div className="Content">
         <Title
-            handleTitleChange={this._handleTitleChange}
+            handleTitleChange={event => { this.props.handleTitleChange(event.target.value) }}
             container='Content'
             onClick={() => this.props.handleTitleClick()}
             titleName={this.props.data.title}
