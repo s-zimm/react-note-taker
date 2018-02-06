@@ -22,6 +22,7 @@ const TitleContainer = props => {
     return (
         <div className="TitleContainer">
             {titleArray}
+            <button onClick={props.newDocWillLoad}>New Doc</button>
         </div>
     )
 }

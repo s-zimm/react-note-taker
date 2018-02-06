@@ -49,8 +49,10 @@ class App extends Component {
     })
   }
 
-  _handleTitleClick = () => {
-    console.log('hi!!')
+  _handleNewDoc = () => {
+    this.setState({
+      documents: this.state.documents.concat({ title: `New Doc`, content: 'Write here!'})
+    })
   }
 
   render() {
@@ -61,12 +63,12 @@ class App extends Component {
           <TitleContainer 
             data={this.state}
             handleClick={this._setSelectedIndex}
+            newDocWillLoad={this._handleNewDoc}
           />
           <Content 
             handleTitleChange={this._handleTitleChange}
             data={this.state.documents[this.state.selectedIndex]}
             handleChange={this._handleTyping}
-            handleTitleClick={this._handleTitleClick}
           />
         </div>
       </div>
