@@ -9,6 +9,10 @@ class Title extends Component {
         }
     }
 
+    _handleTitleChange = (event) => {
+        this.props.handleTitleChange(event);
+    }
+
     render() {
         if (this.props.container === 'TitleContainer') {
             return (
@@ -19,8 +23,8 @@ class Title extends Component {
         } else if (this.props.container === 'Content') {
             if (this.state.isEditing === true) {
                 return (
-                    <div onChange={this.props.handleTitleChange}>
-                        <input type="text" defaultValue={this.props.titleName} />
+                    <div>
+                        <input onChange={this._handleTitleChange} type="text" defaultValue={this.props.titleName} />
                     </div>
                 )
             } else {

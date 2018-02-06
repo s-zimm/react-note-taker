@@ -34,10 +34,17 @@ class App extends Component {
   }
 
   _handleTyping = (p) => {
-    console.log(p)
     this.setState((oldState) => {
       let newState = { ...oldState };
       newState.documents[oldState.selectedIndex].content = p;
+      return newState;
+    })
+  }
+
+  _handleTitleChange = (value) => {
+    this.setState((oldState) => {
+      let newState = { ...oldState };
+      newState.documents[oldState.selectedIndex].title = value;
       return newState;
     })
   }
@@ -56,6 +63,7 @@ class App extends Component {
             handleClick={this._setSelectedIndex}
           />
           <Content 
+            handleTitleChange={this._handleTitleChange}
             data={this.state.documents[this.state.selectedIndex]}
             handleChange={this._handleTyping}
             handleTitleClick={this._handleTitleClick}
