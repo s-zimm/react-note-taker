@@ -27,6 +27,26 @@ class App extends Component {
     }
   }
 
+  render() {
+    return (
+      <div>
+        <h1 className="header">Note Taker</h1>
+        <div className="App">
+          <TitleContainer 
+            data={this.state}
+            handleClick={this._setSelectedIndex}
+            newDocWillLoad={this._handleNewDoc}
+          />
+          <Content 
+            handleTitleChange={this._handleTitleChange}
+            data={this.state.documents[this.state.selectedIndex]}
+            handleChange={this._handleTyping}
+          />
+        </div>
+      </div>
+    );
+  }
+
   _setSelectedIndex = (i)  => {
     this.setState({
       selectedIndex: i
@@ -53,26 +73,6 @@ class App extends Component {
     this.setState({
       documents: this.state.documents.concat({ title: `New Doc`, content: 'Write here!'})
     })
-  }
-
-  render() {
-    return (
-      <div>
-        <h1 className="header">Note Taker</h1>
-        <div className="App">
-          <TitleContainer 
-            data={this.state}
-            handleClick={this._setSelectedIndex}
-            newDocWillLoad={this._handleNewDoc}
-          />
-          <Content 
-            handleTitleChange={this._handleTitleChange}
-            data={this.state.documents[this.state.selectedIndex]}
-            handleChange={this._handleTyping}
-          />
-        </div>
-      </div>
-    );
   }
 }
 
