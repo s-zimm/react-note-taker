@@ -5,29 +5,27 @@ import './App.css';
 import TitleContainer from './components/TitleContainer';
 import Content from './components/Content';
 
+import saveLocal from './localStorage';
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       documents: [
         {
-          title: 'Doc 1',
-          content: 'Hello!'
-        },
-        {
-          title: 'Doc 2',
-          content: 'Yo!'
-        },
-        {
-          title: 'Doc 3',
-          content: 'Hey!'
+          title: 'Click me to change!',
+          content: 'Write notes here!'
         }
       ],
       selectedIndex: 0
     }
+    
   }
 
   render() {
+    
+    saveLocal(this.state);
+
     return (
       <div>
         <h1 className="header">Note Taker</h1>
