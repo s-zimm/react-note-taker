@@ -1,8 +1,8 @@
 .header {
     display: flex;
     justify-content: center;
-    border: solid black 2px;
-    padding: 30px;
+    box-shadow: 0 1px 2px rgb(102, 97, 97);
+    padding: 20px;
     margin-top: 0;
 }
 
@@ -13,10 +13,13 @@
 
 .TitleContainer {
     width: 25%;
+    border-right: solid rgb(102, 97, 97) 1px;
+    margin-right: 10px;
+    padding: 4px;
 }
 
 .Content {
-    width: 70%;
+    width: 68%;
 }
 
 .content-input {
@@ -24,6 +27,30 @@
     height: 400px;
 }
 
+.title-input {
+    font-size: 24px;
+}
+
+.sub-title-container {
+    margin-bottom: 15px;
+}
+
+.sub-sub-title-container {
+    margin: 12px 0;
+}
+
+.title-list {
+    font-size: 14px;
+}
+
 .title-list:hover {
     cursor: pointer;
+}
+
+button {
+    border-radius: 2px;
+}
+
+button:hover {
+    background-color: rgba(211, 204, 204, 0.568);
 }

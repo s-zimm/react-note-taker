@@ -1,5 +1,5 @@
 let saveLocal = (stateObject) => {
-    localStorage.setItem('stuff', JSON.stringify(stateObject))
+    localStorage.setItem('react-notes', JSON.stringify(stateObject))
 }
 
 export default saveLocal;

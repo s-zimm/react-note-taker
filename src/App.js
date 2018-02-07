@@ -11,17 +11,8 @@ import saveLocal from './localStorage';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      documents: [
-        {
-          title: 'Click me to change!',
-          content: 'Write notes here!'
-        }
-      ],
-      selectedIndex: 0
-    }
 
-    const savedData = JSON.parse(localStorage.getItem('stuff'));
+    const savedData = JSON.parse(localStorage.getItem('react-notes'));
     if (savedData) {
       this.state = savedData;
     } else {
@@ -59,6 +50,7 @@ class App extends Component {
         </div>
       </div>
     );
+
   }
 
   _setSelectedIndex = (i)  => {
@@ -86,6 +78,7 @@ class App extends Component {
   _handleNewDoc = () => {
     this.setState({
       documents: this.state.documents.concat({ title: `New Doc`, content: 'Write here!'})
+      // Can also use documents: [ ...this.state.documents, { title: 'New Doc', content: 'Blah blah' } ]
     });
   }
 }
