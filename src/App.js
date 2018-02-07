@@ -48,7 +48,7 @@ class App extends Component {
   _setSelectedIndex = (i)  => {
     this.setState({
       selectedIndex: i
-    })
+    });
   }
 
   _handleTyping = (value) => {
@@ -56,7 +56,7 @@ class App extends Component {
       let newState = { ...oldState };
       newState.documents[oldState.selectedIndex].content = value;
       return newState;
-    })
+    });
   }
 
   _handleTitleChange = (value) => {
@@ -64,13 +64,13 @@ class App extends Component {
       let newState = { ...oldState };
       newState.documents[oldState.selectedIndex].title = value;
       return newState;
-    })
+    });
   }
 
   _handleNewDoc = () => {
     this.setState({
       documents: this.state.documents.concat({ title: `New Doc`, content: 'Write here!'})
-    })
+    });
   }
 }
 

@@ -13,7 +13,7 @@ class Title extends Component {
         if (this.props.container === 'TitleContainer') {
             return (
                 <div className=".title-list" onClick={this.props.onClick}>
-                    <h3>{this.props.titleName}</h3>
+                    <h3>{this.props.index + 1}. {this.props.titleName}</h3>
                 </div>
             )
         } else if (this.props.container === 'Content') {

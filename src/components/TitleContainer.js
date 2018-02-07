@@ -10,6 +10,7 @@ const TitleContainer = props => {
                                                 <div>
                                                     <Title
                                                         key={i}
+                                                        index={i}
                                                         container='TitleContainer'
                                                         titleName={doc.title}
                                                         onClick={() => {
