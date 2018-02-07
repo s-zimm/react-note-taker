@@ -10,7 +10,6 @@ class Content extends React.Component {
             <Title
                 handleTitleChange={this.props.handleTitleChange}
                 container='Content'
-                onClick={() => this.props.handleTitleClick()}
                 titleName={this.props.data.title}
             />
                 <textarea className="content-input" type="text" value={this.props.data.content} onChange={this._handleChange} />

@@ -7,6 +7,7 @@ import Content from './components/Content';
 
 import saveLocal from './localStorage';
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -18,6 +19,21 @@ class App extends Component {
         }
       ],
       selectedIndex: 0
+    }
+
+    const savedData = JSON.parse(localStorage.getItem('stuff'));
+    if (savedData) {
+      this.state = savedData;
+    } else {
+      this.state = {
+        documents: [
+          {
+            title: 'Click me to change!',
+            content: 'Write notes here!'
+          }
+        ],
+        selectedIndex: 0
+      };
     }
     
   }
