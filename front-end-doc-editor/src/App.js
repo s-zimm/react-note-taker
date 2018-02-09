@@ -79,7 +79,7 @@ class App extends Component {
     this.setState({
       documents: this.state.documents.concat({ title: `New Doc`, content: 'Write here!'})
       // Can also use documents: [ ...this.state.documents, { title: 'New Doc', content: 'Blah blah' } ]
-    });
+    }, () => { this.setState({ selectedIndexnpm: (this.state.documents.length - 1) })});
   }
 }
 
