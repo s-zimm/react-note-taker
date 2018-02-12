@@ -26,15 +26,20 @@ class App extends Component {
         selectedIndex: 0
       };
     }
-    
   }
+
+  // componentDidMount() {
+  //   fetch('http://localhost:3000/notes')
+  //     .then(notes => notes.json())
+  //     .then(notes => this.setState({ notes: notes }))
+  // }
 
   render() {
     
     saveLocal(this.state);
 
     return (
-      <div>
+      <div className="outer-container">
         <h1 className="header">Note Taker</h1>
         <div className="App">
           <TitleContainer 
@@ -48,6 +53,7 @@ class App extends Component {
             handleChange={this._handleTyping}
           />
         </div>
+        <button className="btn btn-primary submit-btn">Save</button>
       </div>
     );
 
